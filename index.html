@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Social Feed</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Enhanced Social Feed</h1>
+            <div class="theme-toggle">
+                <i class="fas fa-moon" id="themeToggle"></i>
+            </div>
+        </header>
+        
+        <form id="postForm" class="post-form">
+            <div class="input-container">
+                <select id="postCategory" required>
+                    <option value="">Select Category</option>
+                    <option value="General">General</option>
+                    <option value="Update">Update</option>
+                    <option value="Question">Question</option>
+                    <option value="Announcement">Announcement</option>
+                </select>
+                <textarea id="postInput" placeholder="What's on your mind?" maxlength="200" required></textarea>
+                <div id="charCount" class="char-count">200 characters remaining</div>
+            </div>
+            <div class="post-actions">
+                <button type="button" id="emojiButton" class="emoji-button">
+                    <i class="far fa-smile"></i>
+                </button>
+                <button type="submit" class="submit-button">
+                    <i class="fas fa-paper-plane"></i> Post
+                </button>
+            </div>
+        </form>
+
+        <div class="feed-filters">
+            <button class="filter-btn active" data-filter="all">All Posts</button>
+            <button class="filter-btn" data-filter="General">General</button>
+            <button class="filter-btn" data-filter="Update">Updates</button>
+            <button class="filter-btn" data-filter="Question">Questions</button>
+            <button class="filter-btn" data-filter="Announcement">Announcements</button>
+        </div>
+
+        <div id="feed" class="feed"></div>
+    </div>
+
+    <div id="emojiPicker" class="emoji-picker">
+        <div class="emoji-container"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
